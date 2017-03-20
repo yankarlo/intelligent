@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Evaluacionapp</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">     
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="artefactos/materializecss/css/materialize.css">
+		<link rel="stylesheet" href="artefactos/materializecss/css/particles.css">
+		
+	</head>
+    <body style="background-color:#B5BFD0 " >
+    
+		<div class="row" > 
+			<div class="col s12 m12 l12">
+				<div class="input-field col s12  ">
+						<h2 class="center blue-text">BIENVENIDO</h2>
+					</div>
+			 		<div class="col s12 m8 l4 offset-l4 offset-m2" >
+					   		<div class="z-depth-4 card-panel ">
+								<form  id="inicio" action="">
+								 	<div class="row">
+								 	  	<div class="input-field col s12 center">
+									 	  	<!--<img src="artefactos/img/header-logo.png" class="responsive-img " >-->
+									 	  	<h4 class="center  login-form-text blue-text">INICIA SESSION</h4>
+								 	  	</div>
+							 	 	</div>
+								 	  
+							 	  	<div class="row margin">
+								 	  	<div class="input-field col s12 ">
+								 	  		<input id="usu" name="usuario" type="text" value="" required="true">
+								 	  		<label for="usu" >Nombre de usuario</label>
+								 	  	</div>
+							 	  	</div>
+									<div class="row margin">
+										<div class="input-field col s12">
+										    <input id="pass" type="password" name="contrasena"  required="true">
+										    <label for="pass" >Contraseña</label>
+										</div>
+									</div>
+									
+									<div class="row margin">
+										<div class="input-field col s12">
+										    
+				                            <select class='browser-default' id="maquina" required name='maquina'>
+				                                <option disabled selected value=''>Seleccione Maquina</option>
+				                            </select>
+										</div>
+									</div>
+									<br>
+									<div class="row">						    
+									    <div class="input-field col s12">
+				    	                   <button class='btn waves-effect waves-light col s12 grey lighten-1 blue-text' type='submit' >Entrar
+				                            
+				                            </button>
+									    </div>
+								 	
+								</form>	
+						</div>
+					</div>
+			</div>
+		</div>
+			
+		
+			
+
+		
+	
+         
+		
+	
+		    <script type="text/javascript" src="artefactos/materializecss/js/jquery.min.js"></script>
+			<script type="text/javascript" src="artefactos/materializecss/js/materialize.js"></script>
+		    <script type="text/javascript" src="controlador/login.js"></script>
+		    <script src="artefactos/materializecss/js/particles.min.js"></script>
+		    <script src="artefactos/materializecss/js/particleCustom.js"></script>
+    </body>
+</html>
