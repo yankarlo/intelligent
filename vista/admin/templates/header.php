@@ -37,7 +37,7 @@ session_start();
 
 
             <ul id="dropdown" class="dropdown-content">
-                <li><a href="procesos.php">PROCESOS Y MARCAS</a></li>
+                <li><a href="marcas.php">MODELOS Y MARCAS</a></li>
                 <li class="divider"></li>
                 <li><a href="operaciones.php">OPERACIONES</a></li>
                 <li class="divider"></li>

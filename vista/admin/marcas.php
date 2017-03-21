@@ -6,7 +6,7 @@
             <div class="row"> 
         
                 <div class=" col s12 m12 l12">
-                    <h4 class="center-align" style="color: #2196F3;">PROCESOS Y MARCAS<h4>
+                    <h4 class="center-align" style="color: #2196F3;">MODELOS Y MARCAS<h4>
                 </div> 
                 <!--<div class="col s12 m12 l12 ">
                     <div class="col s12 m2 l1 ">
@@ -22,18 +22,17 @@
                             </a>
                         </div> 
                         <div class="col s12 m12 l10">
-                            <h5 class="center-align" style="color: #2196F3;">MANAGER PROCESOS<h5>
+                            <h5 class="center-align" style="color: #2196F3;">MANAGER MODELOS<h5>
                         </div>
                         
                     </div>
                     <div class="col s12 m12 l12">
-                        <table id="tablaproceso" class="display centered responsive tabla" cellspacing="0"  >
+                        <table id="tablamodelo" class="display centered responsive tabla" cellspacing="0"  >
                             <thead>
                                 <tr>
-                                    <th>PROCESO_ID</th>
-                                    <th>PROCESO</th>
+                                    <th>MODELO_ID</th>
+                                    <th>MODELO</th>
                                     <th>EDITAR</th>                          
-                                    <th>ELIMINAR</th>                          
                                 </tr>
                             </thead>
                             <tbody>                                      
@@ -60,8 +59,7 @@
                                 <tr>
                                     <th>MARCA_ID</th>
                                     <th>MARCA</th>
-                                    <th>EDITAR</th>                          
-                                    <th>ELIMINAR</th>                          
+                                    <th>EDITAR</th>                            
                                 </tr>
                             </thead>
                             <tbody>                                      
@@ -94,4 +92,4 @@
     </form>
 </div>   
 <?php include("templates/footer.php"); ?>
-<script type="text/javascript" src="../../controlador/operacion.js"></script>
+<script type="text/javascript" src="../../controlador/marca.js"></script>

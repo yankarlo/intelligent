@@ -6,6 +6,6 @@
  define( "PAS", "");
  //define( "USR", "postgres");
  //define( "PAS", "");
- define( "BDA", "bd_intelligent");
+ define( "BDA", "bd_intel");
  define( "PRT", "3306");
 ?>

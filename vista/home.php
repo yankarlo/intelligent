@@ -26,12 +26,9 @@
                                 <th>MODELO_ID</th>
                                 <th>CLIENTE</th>
                                 <th>MODELO</th>
-                                <th>PROCESO</th>
                                 <th>CANTIDAD</th>
-                                <th>ENTREGADO</th>
-                                <th>CANTIDAD_ESTANDAR</th>
+                                <th>% ENTREGADO</th>
                                 <th>INICIO</th>
-                                <th>PROCESO_ID</th>
                                 <th>EMPEZAR</th>
                                 
                                 

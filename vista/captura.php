@@ -4,7 +4,7 @@
 			<div class="card-panel">
 	       		<div class="row">
 		       		<div class="col s12 m12 l12">
-		       			<h4 class="center-align" style="color: #2196F3;">MODELO<h4>
+		       			<h4 class="center-align" style="color: #2196F3;">OPERACION<h4>
 		       		</div>
 		       		<div class="col s12 m5 l4" >
 		       			<div class="col s12 m12 l12" >
@@ -13,7 +13,7 @@
 						    </ul>
 					    </div>
 					    <div class="col s12 m12 l12" >
-					    	 <img class="responsive-img" src="../artefactos/img/modelos/molde_america.jpg">
+					    	 <img class="responsive-img" src="../artefactos/img/operaciones/bordado.jpg">
 					    </div>
 		       		</div>
 		       		<form class="col s12 m4 l4"  id="form" action="">
@@ -66,11 +66,11 @@
 					          	</h1>
 					        </div>
 						</div>
-						<div class="col s12 m7 l12" > 
+						<!--<div class="col s12 m7 l12" > 
 							<h3 style="color: #2196F3;">Productividad: <span id="productividad">00</span>%</h3>
 							<h3 style="color: #2196F3;">Entregado: <span id="entregado"></span></h3>
 							<h3 style="color: #2196F3;">Planeado: <span id="planeado"></span></h3>
-						</div>
+						</div>-->
 		       		</div>
 		       	</div>
 	       	</div>

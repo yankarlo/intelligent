@@ -1,9 +1,9 @@
 <?php 
-include ("procesoDAO.class.php");
+include ("marcaDAO.class.php");
 
 $nombre = $_REQUEST['nombre'];
 
-$controlador = new ProcesoDAO();
+$controlador = new MarcaDAO();
 $resultado = $controlador->insert_marca($nombre);
 
 echo json_encode($resultado);

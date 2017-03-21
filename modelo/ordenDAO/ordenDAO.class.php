@@ -15,20 +15,14 @@ class OrdenDAO extends PDO{
                     `mopr_id`,
                     `mopr_nombre`,
                     `orpr_id`,
-                    `clie_nombre`,                   
-                    `ormo_cantidad_planeada`,
-                    `ormo_cantidad_entregada`,
-                    `ormo_cantidad_standar`,
-                    `prpr_nombre`,
-                    `ormo_porcentaje_desperdicio`,
+                    `clie_nombre`,
                     `orpr_fecha_planeada_inicio`,
-                    `prpr_procesos_produccion`.`prpr_id`
+                    `orpr_cantidad_planeada`,
+                    `orpr_porcentaje_cumplimiento`
                     FROM
                     orpr_ordenes_produccion
-                    INNER JOIN `ormo_orden_modelo` ON ( `ormo_orden_modelo`.`ormo_orpr_id` = `orpr_ordenes_produccion`.`orpr_id`)
-                    INNER JOIN `mopr_modelo_produccion` ON ( `mopr_modelo_produccion`.`mopr_id`= `ormo_orden_modelo`.`ormo_mopr_id`)
-                    INNER JOIN `clie_clientes` ON (`mopr_modelo_produccion`.`mopr_clie_id`= `clie_clientes`.`clie_id`) 
-                    INNER JOIN `prpr_procesos_produccion` ON (`prpr_procesos_produccion`.`prpr_id` = `ormo_orden_modelo`.`prpr_id`) ";
+                    INNER JOIN `mopr_modelo_produccion` ON ( `mopr_modelo_produccion`.`mopr_id`= `orpr_ordenes_produccion`.`orpr_mopr_id`)
+                    INNER JOIN `clie_clientes` ON (`mopr_modelo_produccion`.`mopr_clie_id`= `clie_clientes`.`clie_id`)  ";
             $query = $this->con->prepare($sql);
             $query->execute();
             $resultado = $query->fetchAll(PDO::FETCH_ASSOC);

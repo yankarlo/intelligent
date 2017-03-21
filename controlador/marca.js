@@ -1,5 +1,5 @@
 $(document).on("ready", function () {
-    
+    // Controlador marca admin
     $('.tabla').DataTable({
         "language": {
             "decimal":        "",
@@ -37,25 +37,24 @@ $(document).on("ready", function () {
         "bSort": true
     }); 
     $('div.dataTables_length').find("select").addClass("browser-default").css({"width": "150%"});
-    var proceso = $('#tablaproceso').DataTable();
+    var modelo = $('#tablamodelo').DataTable();
     var marcas = $('#tablamarca').DataTable();
 
-    function procesos() {
+    function modelos() {
         $.ajax({
-            url:"../../modelo/procesoDAO/modelo_get_procesos.php",
+            url:"../../modelo/marcaDAO/modelo_get_modelo.php",
             type:"POST",
             data:""
         }).done(function(respuesta){  
-            
+            console.info(respuesta);
             var resultado = $.parseJSON(respuesta);
            //console.info(resultado);
-           proceso.clear().draw(); 
+           modelo.clear().draw(); 
             for (var i = 0; i < resultado.length; i++) {    
-                proceso.row.add([
-                    resultado[i].prpr_id,
-                    resultado[i].prpr_nombre,
-                    '<a class="btn-floating btn-small waves-effect waves-light cyan-1 modal-trigger editar green " href="#mod" tipo="1"><i class="material-icons">mode_edit</i></a>',
-                    '<a class="btn-floating btn-small waves-effect waves-light cyan-1  eliminar red" tipo="1"><i class="material-icons">close</i></a>'
+                modelo.row.add([
+                    resultado[i].moma_id,
+                    resultado[i].moma_nombre,
+                    '<a class="btn-floating btn-small waves-effect waves-light cyan-1 modal-trigger editar green " href="#mod" tipo="1"><i class="material-icons">mode_edit</i></a>'
                 ]).draw();
             }
             $('.modal-trigger').leanModal();
@@ -66,7 +65,7 @@ $(document).on("ready", function () {
      
     function marca() {
         $.ajax({
-            url:"../../modelo/procesoDAO/modelo_get_marcas.php",
+            url:"../../modelo/marcaDAO/modelo_get_marcas.php",
             type:"POST",
             data:""
         }).done(function(respuesta){  
@@ -78,8 +77,7 @@ $(document).on("ready", function () {
                 marcas.row.add([
                     resultado[i].marc_id,
                     resultado[i].marc_nombre,
-                    '<a class="btn-floating btn-small waves-effect waves-light cyan-1 modal-trigger editar green " href="#mod"  tipo="2"><i class="material-icons">mode_edit</i></a>',
-                    '<a class="btn-floating btn-small waves-effect waves-light cyan-1 eliminar red" tipo="2"><i class="material-icons">close</i></a>'
+                    '<a class="btn-floating btn-small waves-effect waves-light cyan-1 modal-trigger editar green " href="#mod"  tipo="2"><i class="material-icons">mode_edit</i></a>'
                 ]).draw();
             }
             $('.modal-trigger').leanModal(); 
@@ -88,7 +86,7 @@ $(document).on("ready", function () {
         }); 
     }
 
-    procesos();
+    modelos();
     marca();
 
     $("#mod").css({"width": "40%", "height": "35%"});
@@ -98,8 +96,8 @@ $(document).on("ready", function () {
         var tipo = $(this).attr("tipo");
 
         if (tipo === "1") {
-            var data = proceso.row( $(this).parents('tr') ).data();
-            $("#titulo_modal").text("EDITAR PROCESO");
+            var data = modelo.row( $(this).parents('tr') ).data();
+            $("#titulo_modal").text("EDITAR MODELO");
             $("#form").attr("tipo","3").attr("tipo");
             $("#contenido_modal").html(`<div class="input-field col s12 m12 l12">
                                             <input id="nombre" type="text" class="validate" name="nombre" value="${data[1]}">
@@ -108,7 +106,7 @@ $(document).on("ready", function () {
                                         </div>`); 
         } else if(tipo="2") {
             var data = marcas.row( $(this).parents('tr') ).data();
-            $("#titulo_modal").text("EDITAR PROCESO");
+            $("#titulo_modal").text("EDITAR MARCA");
             $("#form").attr("tipo","4").attr("tipo");
             $("#contenido_modal").html(`<div class="input-field col s12 m12 l12">
                                             <input id="nombre" type="text" class="validate" name="nombre" value="${data[1]}">
@@ -123,7 +121,7 @@ $(document).on("ready", function () {
         var tipo = $(this).attr("tipo");
          
         if (tipo === "1") { 
-            $("#titulo_modal").text("CREAR PROCESO");
+            $("#titulo_modal").text("CREAR MODULO");
             $("#form").attr("tipo","1").attr("tipo");
             $("#contenido_modal").html(`<div class="input-field col s12 m12 l12">
                                             <input id="nombre" type="text" class="validate" name="nombre">
@@ -145,22 +143,22 @@ $(document).on("ready", function () {
 
         var tipo = $(this).attr("tipo"), url, data = $(this).serializeArray(), text, title = "Estas Seguro?", mensaje, mensaje2;
         if (tipo === "1") {
-            url = "../../modelo/procesoDAO/modelo_insert_proceso.php"
+            url = "../../modelo/marcaDAO/modelo_insert_modelo.php"
             text = "Se guardara este nuevo proceso.";
             mensaje = "Guardado!";
             mensaje2 = "Nuevo proceso registrado.";
         } else if(tipo === "2") {
-            url = "../../modelo/procesoDAO/modelo_insert_marca.php"
+            url = "../../modelo/marcaDAO/modelo_insert_marca.php"
             text = "Se guardara este nueva marca.";
             mensaje = "Guardado!";
             mensaje2 = "Nuevo marca registrado.";
         } else if(tipo === "3") {
-            url = "../../modelo/procesoDAO/modelo_edit_proceso.php"
-            text = "Se editara este proceso.";
+            url = "../../modelo/marcaDAO/modelo_edit_modelo.php"
+            text = "Se editara este modelo.";
             mensaje = "Editado!";
-            mensaje2 = "Proceso modificado.";
+            mensaje2 = "Modelo modificado.";
         } else if(tipo === "4") {
-            url = "../../modelo/procesoDAO/modelo_edit_marca.php"
+            url = "../../modelo/marcaDAO/modelo_edit_marca.php"
             text = "Se editara este marca.";
             mensaje = "Editado!";
             mensaje2 = "Marca modificada.";
@@ -187,7 +185,7 @@ $(document).on("ready", function () {
                 var resultado = $.parseJSON(respuesta);
                //console.info(resultado);
                
-               procesos();
+               modelos();
                marca();
                 
             }).fail(function(respuesta){

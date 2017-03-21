@@ -1,7 +1,7 @@
 <?php
 require_once("../conexion.class.php");
 
-class ProcesoDAO extends PDO{
+class MarcaDAO extends PDO{
 
 	private $con;     
     public function __construct(){
@@ -24,11 +24,11 @@ class ProcesoDAO extends PDO{
         }
     }
 
-    public function get_procesos()
+    public function get_modelo()
     {
         try {       
             
-            $sql = "SELECT * FROM prpr_procesos_produccion";
+            $sql = "SELECT * FROM `moma_modelo_maquina`";
             $query = $this->con->prepare($sql);
             $query->execute();
             $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -40,10 +40,10 @@ class ProcesoDAO extends PDO{
         }
     }
 
-    public function insert_proceso($nombre)
+    public function insert_modelo($nombre)
     {
         try {              
-            $sql = "INSERT INTO `prpr_procesos_produccion`(`prpr_nombre`) VALUES ('$nombre')";
+            $sql = "INSERT INTO `moma_modelo_maquina`(`moma_empr_id`, `moma_nombre`) VALUES (3, '$nombre')";
             $query = $this->con->prepare($sql);            
             $resultado = $query->execute();
             $this->con->close_con();
@@ -82,14 +82,14 @@ class ProcesoDAO extends PDO{
         }
     }
 
-    public function edit_proceso($nombre, $id)
+    public function edit_modelo($nombre, $id)
     {
         try {              
-            $sql = "UPDATE `prpr_procesos_produccion` SET `prpr_nombre`='$nombre' WHERE `prpr_id`=$id";
+            $sql = "UPDATE `moma_modelo_maquina` SET `moma_nombre`='$nombre' WHERE `moma_id` = $id";
             $query = $this->con->prepare($sql);            
             $resultado = $query->execute();
             $this->con->close_con();
-            return $resultado;       
+            return $sql;       
 
         } catch (PDOException $e) {
             echo $e->getMessage();

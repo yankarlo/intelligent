@@ -1,5 +1,5 @@
 $(document).on("ready", function () {
-    
+    //Controlador modelo admin
     var tab = $('#tablamodelo').DataTable({
         "language": {
             "decimal":        "",

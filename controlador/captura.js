@@ -8,10 +8,9 @@ $(document).on("ready", function () {
        	//console.info(respuesta);
        	var resultado = $.parseJSON(respuesta);
        	//console.info(resultado);
-        $("#detalle_modelo").append(`<li class="collection-item"><span class="blue-text text-darken-2">Modelo</span>: ${resultado.modelo_nombre}</li>
-                                    <li class="collection-item"><span class="blue-text text-darken-2">Cantidad</span>: <span id="standar">${resultado.modelo_cantidad}</span></li>
-                                    <li class="collection-item"><span class="blue-text text-darken-2">Proceso</span>: ${resultado.modelo_proceso}</li>
-                                    <li class="collection-item"><span class="blue-text text-darken-2">Orden</span>: ${resultado.orden_id}</li>`);
+        $("#detalle_modelo").append(`<li class="collection-item"><span class="blue-text text-darken-2">Operacion</span>: </li>
+                                    <li class="collection-item"><span class="blue-text text-darken-2">Cantidad</span>: <span id="standar"></span></li> 
+                                    <li class="collection-item"><span class="blue-text text-darken-2">Orden</span>:   </li>`);
         $("#entregado").text(resultado.orden_entregada);
         $("#planeado").text(resultado.orden_planeada);
 

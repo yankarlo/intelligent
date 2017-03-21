@@ -32,14 +32,6 @@ $(document).on("ready", function () {
                 "targets": [ 1 ],
                 "visible": false,
                 "searchable": false
-            },{
-                "targets": [ 7 ],
-                "visible": false,
-                "searchable": false
-            },{
-                "targets": [ 9 ],
-                "visible": false,
-                "searchable": false
             }
         ],
         "bSort": true
@@ -60,12 +52,9 @@ $(document).on("ready", function () {
                 resultado[i].mopr_id,
                 resultado[i].clie_nombre,
                 resultado[i].mopr_nombre,
-                resultado[i].prpr_nombre,
-                resultado[i].ormo_cantidad_planeada,
-                resultado[i].ormo_cantidad_entregada,
-                resultado[i].ormo_cantidad_standar,                     
+                resultado[i].orpr_cantidad_planeada,  
+                resultado[i].orpr_porcentaje_cumplimiento,                    
                 resultado[i].orpr_fecha_planeada_inicio,
-                resultado[i].prpr_id,
 				'<a class="btn-floating btn-small waves-effect waves-light cyan-1 modal-trigger comenzar blue" ><i class="material-icons">add</i></a>'
 	    	]).draw();
 		}

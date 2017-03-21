@@ -1,7 +1,7 @@
 <?php 
-include ("procesoDAO.class.php");
+include ("maquinaDAO.class.php");
 
-$controlador = new ProcesoDAO();
+$controlador = new MaquinaDAO();
 $resultado = $controlador->get_marcas();
 echo json_encode($resultado);
 ?>

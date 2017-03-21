@@ -1,5 +1,5 @@
 $(document).on("ready", function () {
-	
+    //Controlador orden admin	
 	var tab = $('#tablaorden').DataTable({
         "language": {
             "decimal":        "",
